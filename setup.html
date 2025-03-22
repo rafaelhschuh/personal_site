@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Setup</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            margin-bottom: 40px;
+        }
+
+        header a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            max-width: 430px;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: filter 0.3s ease;
+        }
+
+        .image-wrapper:hover img {
+            filter: brightness(0.7);
+        }
+
+        .fullscreen-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-wrapper:hover .fullscreen-icon {
+            opacity: 1;
+        }
+
+        .specs, .system-info {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            overflow-x: auto;
+            word-wrap: break-word;
+        }
+
+        .specs ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .specs li {
+            margin-bottom: 5px;
+        }
+
+        .system-info {
+            font-family: monospace;
+            white-space: pre-wrap;
+            font-size: 0.7rem;
+            padding-left: 15px;
+        }
+
+        .fullscreen-img {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .fullscreen-img img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html">&larr; Voltar para a Home</a>
+        </header>
+        <h1>Meu Setup</h1>
+        <div class="image-wrapper" onclick="openFullScreen()">
+            <img src="./images/setup.jpg" alt="Imagem do Setup">
+            <div class="fullscreen-icon">🔍</div>
+        </div>
+        <p>Esse é o meu setup atual, equipado para produtividade, entretenimento e alguns jogos.</p>
+        
+        <div class="specs">
+            <h2>Especificações</h2>
+            <ul>
+                <li><strong>Processador:</strong> Intel i5-1035G1 (8) @ 3.600GHz</li>
+                <li><strong>Placa de Vídeo 1:</strong> NVIDIA GeForce MX130</li>
+                <li><strong>Placa de Vídeo 2:</strong> Intel Iris Plus Graphics G1</li>
+                <li><strong>Memória RAM:</strong> 16gb DDR4 32000 MHz</li>
+                <li><strong>Resolução:</strong> 1920x1080</li>
+                <li><strong>Sistema Operacional:</strong> Pop!_OS 22.04 LTS x86_64</li>
+                <li><strong>Interface Gráfica:</strong> GNOME 42.9</li>
+                <li><strong>Teclado Mecânico:</strong> Machenike K500 Switch Brown</li>
+                <li><strong>Mouse:</strong> Delux M800 (PAW3325)</li>
+                <li><strong>Headset:</strong> Redragon Zeus RGB 6.1</li>
+            </ul>
+        </div>
+        
+        <div class="system-info">
+                /////////////                schuh@pop-os 
+            /////////////////////            ------------ 
+         ///////*767////////////////         OS: Pop!_OS 22.04 LTS x86_64 
+       //////7676767676*//////////////       Host: VivoBook_ASUSLaptop X515JF_X515 
+      /////76767//7676767//////////////      Kernel: 6.12.10-76061203-generic 
+     /////767676///*76767///////////////     Uptime: ∞ hours, ∞ mins 
+    ///////767676///76767.///7676*///////    Packages: 2857 (dpkg), 29 (flatpak) 
+   /////////767676//76767///767676////////   Shell: zsh 5.8.1 
+   //////////76767676767////76767/////////   Resolution: 1920x1080 
+   ///////////76767676//////7676//////////   DE: GNOME 42.9 
+   ////////////,7676,///////767///////////   WM: Mutter 
+   /////////////*7676///////76////////////   WM Theme: Pop 
+   ///////////////7676////////////////////   Theme: WhiteSur-Dark [GTK2/3] 
+    ///////////////7676///767////////////    Icons: Pop [GTK2/3] 
+     //////////////////////'////////////     Terminal: gnome-terminal 
+      //////.7676767676767676767,//////      CPU: Intel i5-1035G1 (8) @ 3.600GHz 
+       /////767676767676767676767/////       GPU: NVIDIA GeForce MX130 
+         ///////////////////////////         GPU: Intel Iris Plus Graphics G1 
+            /////////////////////            Memory: 9818MiB / 15732MiB 
+                /////////////
+        </div>
+    </div>
+    
+    <div class="fullscreen-img" onclick="closeFullScreen()">
+        <img src="./images/setup.jpg" alt="Imagem do Setup">
+    </div>
+
+    <script>
+        function openFullScreen() {
+            document.querySelector(".fullscreen-img").style.display = "flex";
+        }
+
+        function closeFullScreen() {
+            document.querySelector(".fullscreen-img").style.display = "none";
+        }
+    </script>
+</body>
+</html>
